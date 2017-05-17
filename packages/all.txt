@@ -1,7 +1,6 @@
 make
 python
 python-colorama
-python-pep8
 g++
 flex
 bison
