@@ -7,4 +7,4 @@ flex
 bison
 openssh-client
 rsync
-libz-dev
+zlib1g-dev
