@@ -7,3 +7,4 @@ bison
 openssh-client
 rsync
 zlib1g-dev
+git
