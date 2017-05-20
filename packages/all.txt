@@ -2,6 +2,7 @@ make
 python
 python-colorama
 g++
+libfl-dev
 flex
 bison
 openssh-client
