@@ -11,3 +11,4 @@ zlib1g-dev
 git
 lsb-release
 fakeroot
+libasio-dev
