@@ -12,3 +12,4 @@ git
 lsb-release
 fakeroot
 libasio-dev
+libfftw3-dev
