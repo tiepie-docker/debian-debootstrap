@@ -6,13 +6,6 @@ env:
         - QEMU_VER=v2.9.1
         - DOCKER_REPO=tiepie/debian-debootstrap
     matrix:
-        - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=jessie UNAME_ARCH=x86_64 VERSION=jessie
-        - ARCH=arm64 INCLUDE=wget QEMU_ARCH=aarch64 SUITE=jessie UNAME_ARCH=arm64 VERSION=jessie
-        - ARCH=armel INCLUDE=wget QEMU_ARCH=armeb SUITE=jessie UNAME_ARCH=armel VERSION=jessie
-        - ARCH=armhf INCLUDE=wget QEMU_ARCH=arm SUITE=jessie UNAME_ARCH=armv7l VERSION=jessie
-        - ARCH=i386 INCLUDE=wget QEMU_ARCH=i386 SUITE=jessie UNAME_ARCH=i386 VERSION=jessie
-        - ARCH=mipsel INCLUDE=wget QEMU_ARCH=mipsel SUITE=jessie UNAME_ARCH=mipsel VERSION=jessie
-
         - ARCH=amd64 INCLUDE=wget QEMU_ARCH=x86_64 SUITE=stretch UNAME_ARCH=x86_64 VERSION=stretch
         - ARCH=arm64 INCLUDE=wget QEMU_ARCH=aarch64 SUITE=stretch UNAME_ARCH=arm64 VERSION=stretch
         - ARCH=armel INCLUDE=wget QEMU_ARCH=armeb SUITE=stretch UNAME_ARCH=armel VERSION=stretch
@@ -29,4 +22,4 @@ before_script:
 script:
     - sudo ./update.sh -a "$ARCH" -v "$VERSION" -q "$QEMU_ARCH" -u "$QEMU_VER" -d "$DOCKER_REPO" -s "$SUITE" -i "$INCLUDE" -o "$UNAME_ARCH"
 after_success:
-    - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO; fi
+    - if [[ $TRAVIS_PULL_REQUEST == 'false' ]]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO:$ARCH-$SUITE; fi
