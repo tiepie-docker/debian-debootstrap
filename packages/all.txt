@@ -17,3 +17,5 @@ liblua5.3-0
 libreadline-dev
 liblua5.3-dev
 cmake
+clang
+clang-tidy
