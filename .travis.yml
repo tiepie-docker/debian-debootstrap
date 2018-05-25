@@ -24,6 +24,7 @@ env:
         - ARCH=mips64el INCLUDE=wget QEMU_ARCH=mips64el SUITE=buster UNAME_ARCH=mips64el VERSION=buster
 
 before_script:
+    - sudo apt-get clean -y -qq
     - echo "deb http://archive.ubuntu.com/ubuntu bionic main universe" | sudo tee -a /etc/apt/sources.list
     - sudo apt-get update -qq
     - sudo apt-get -yt bionic install qemu-user-static debootstrap
