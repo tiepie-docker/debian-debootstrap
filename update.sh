@@ -3,7 +3,7 @@
 # A POSIX variable
 OPTIND=1 # Reset in case getopts has been used previously in the shell.
 
-while getopts "a:v:q:u:d:s:i:o:d:" opt; do
+while getopts "a:v:q:u:d:s:i:o:t:" opt; do
     case "$opt" in
     a)  ARCH=$OPTARG
         ;;
@@ -19,7 +19,7 @@ while getopts "a:v:q:u:d:s:i:o:d:" opt; do
         ;;
     i)  INCLUDE=$OPTARG
         ;;
-    d)  DATE=$OPTARG
+    t)  DATE=$OPTARG
         ;;
     esac
 done
