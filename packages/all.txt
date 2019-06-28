@@ -16,6 +16,7 @@ libfftw3-dev
 liblua5.3-0
 libreadline-dev
 liblua5.3-dev
+libusb-1.0-0-dev
 cmake
 clang
 clang-tidy
