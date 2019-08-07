@@ -24,6 +24,14 @@ env:
         - ARCH=mipsel   INCLUDE=wget QEMU_ARCH=mipsel   SUITE=buster  TIEPIE_ARCH=mipsel
         - ARCH=mips64el INCLUDE=wget QEMU_ARCH=mips64el SUITE=buster  TIEPIE_ARCH=mips64el
 
+        - ARCH=amd64    INCLUDE=wget QEMU_ARCH=x86_64   SUITE=bullseye  TIEPIE_ARCH=x86_64
+        - ARCH=arm64    INCLUDE=wget QEMU_ARCH=aarch64  SUITE=bullseye  TIEPIE_ARCH=arm64
+        - ARCH=armel    INCLUDE=wget QEMU_ARCH=armeb    SUITE=bullseye  TIEPIE_ARCH=armel
+        - ARCH=armhf    INCLUDE=wget QEMU_ARCH=arm      SUITE=bullseye  TIEPIE_ARCH=armhf
+        - ARCH=i386     INCLUDE=wget QEMU_ARCH=i386     SUITE=bullseye  TIEPIE_ARCH=x86
+        - ARCH=mipsel   INCLUDE=wget QEMU_ARCH=mipsel   SUITE=bullseye  TIEPIE_ARCH=mipsel
+        - ARCH=mips64el INCLUDE=wget QEMU_ARCH=mips64el SUITE=bullseye  TIEPIE_ARCH=mips64el
+
 before_script:
     - sudo apt-get clean -y -qq
     - sudo apt-get update -qq
